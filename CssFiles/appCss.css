@@ -1,0 +1,68 @@
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    position: absolute;
+    bottom: 34%;
+    color: #d5122f;
+    border: 0;
+    background: none;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 0%;
+}
+
+.slick-prev:after {
+    content: "\f104";
+    font: 40px/1 'FontAwesome';
+}
+
+.slick-next {
+    right: 0%;
+    text-align: right;
+}
+
+.slick-next:after {
+    content: "\f105";
+    font: 40px/1 'FontAwesome';
+}
+
+.box
+{
+    border: 1px solid whitesmoke;
+    height: 50px;
+    width: 95%;
+    background: rgb(63,81,181);
+    color: #efefef;
+    text-align: left;
+}
+/*.slick-prev:hover:after,
+.slick-next:hover:after {
+    color: #7e7e7e;
+}*/
+
+#loginUser
+{
+    width: 900px;
+    height: 500px;
+}
+#tabllll
+{
+    background: #3498db;
+    color:white;
+}
+#rateFixTable
+{
+    margin-top: 20px;
+}
+#slideer {
+    /*margin: 80px 20px;*/
+    width: 98%;
+    left: 50%
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: red;
+}
