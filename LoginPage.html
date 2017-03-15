@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="CssFiles/angular-material.min.css">
+    
+   
+    <script src="JavaScriptFiles/hammer.min.js"></script>
+    <script src="JavaScriptFiles/angular.min.js"></script>
+    <script src="JavaScriptFiles/angular-animate.min.js"></script>
+    <script src="JavaScriptFiles/angular-aria.min.js"></script>
+    <script src="JavaScriptFiles/angular-material.min.js"></script>
+    <script src="JavaScriptFiles/angular-cookies.min.js"></script>
+    
+</head>
+<body>
+    <!-- Using Angular Material 6.1 + Jade Templates-->
+    <div ng-app="MyApp" ng-controller="AppCtrl" layout="column" layout-align="center center" layout-fill="layout-fill">
+        <div layout="column" class="loginBox md-whiteframe-z1">
+            <md-toolbar>
+                <h2 class="md-toolbar-tools"><span>Login</span></h2>
+            </md-toolbar>
+            <md-content layout="column" class="md-padding">
+                <md-input-container>
+                    <label>User Name</label>
+                    <input type="text" ng-model="username" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input type="password" ng-model="password" />
+                </md-input-container>
+                <div layout="row" layout-align="center center" style="padding-top:20px;">
+                    <md-button ng-click="doLoggIn()" class="md-raised md-primary">Login</md-button>
+                </div>
+            </md-content>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('MyApp', ['ngMaterial','ngCookies'])
+
+		.controller('AppCtrl', function ($scope,$http,$window,$location,$cookieStore) 
+		{
+			$scope.doLoggIn = function() 
+			{
+				
+				if ($scope.username == undefined || $scope.password == undefined) 
+				{
+                    $window.alert("Please enter User Name! and Password");
+                    return;
+                }
+                
+				else
+				{
+					$window.location.href ='../home.html#/';	
+					$cookieStore.put('username',$scope.username);
+				}
+			}	
+		});
+</script>
+</body>
+</html>

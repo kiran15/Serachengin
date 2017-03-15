@@ -1,0 +1,75 @@
+<html>
+<head>
+     <title></title>
+    <link rel="stylesheet" type="text/css" href="CssFiles/angular-material.min.css">
+
+    <link rel="stylesheet" href="CssFiles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="CssFiles/slick.min.css" />
+    <link href="CssFiles/bootstrap-combined.min.css" rel="stylesheet">
+
+	<script src="JavaScriptFiles/jquery.min.js"></script>
+    <script src="JavaScriptFiles/bootstrap.min.js"></script>
+
+
+    <script src="JavaScriptFiles/angular.min.js"></script>
+    <script src="JavaScriptFiles/slick.min.js"></script>
+    <script src="JavaScriptFiles/angular-slick.min.js"></script>
+    <script src="JavaScriptFiles/hammer.min.js"></script>
+    <script src="JavaScriptFiles/angular-animate.min.js"></script>
+    <script src="JavaScriptFiles/angular-aria.min.js"></script>
+    <script src="JavaScriptFiles/angular-material.min.js"></script>
+    <script src="JavaScriptFiles/angular-route.min.js"></script>
+    <script src="JavaScriptFiles/angular-messages.min.js"></script>
+    <script src="JavaScriptFiles/ui-bootstrap-tpls.min.js"></script>
+    <script src="JavaScriptFiles/angular-cookies.min.js"></script>
+    <meta charset="utf-8" />
+</head>
+
+<style>
+.newspaper {
+    
+    float: left;
+    width: 240px;
+
+}
+</style>
+<body ng-app="MyApp">
+<div layout="column" layout-fill id="navbar" ng-controller="AppCtrl2">
+		<div  style="min-height:20% !important;; height:20% !important;">
+        <md-content class="md-padding _md" style="background-color: rgb(63,81,181);padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;">
+            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-click="showHomePage($event)"  name="dashboard"><span style="color: rgb(250,250,250);">Posts</span></md-nav-item>
+				
+                <span flex></span>
+
+                
+            </md-nav-bar>
+        </md-content>
+		</div>
+		<div>
+			
+                <md-input-container style="width: 254px;">
+                    <label>Search Text</label>
+                    <input type="text" ng-model="search" placeholder='Enter the value 1 to 10'/>
+					<!--<md-button ng-click="getSearchDetails()" class="md-raised md-primary">Search</md-button>-->
+                </md-input-container>
+                
+				<div  >
+					<div  ng-repeat="grp in gruops | filter: {userId:search} " style="width: 350px;border: solid; margin-left: 5%; margin-bottom:2%;" class="newspaper">
+									<ul>
+										<li>User ID : {{grp.userId}}</li>
+									
+										<li>Title   : {{grp.title}}</li>
+									</ul>
+									
+								
+					</div>
+				</div>
+                
+            
+		</div>
+ </div>
+
+<script src="MainApp.js"></script>
+</body>
+</html>
